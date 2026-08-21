@@ -1,0 +1,2 @@
+# shift-management-app
+Workforce scheduling and shift management application designed for team labor planning.
