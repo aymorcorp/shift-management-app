@@ -1630,10 +1630,25 @@ document.getElementById("btnEnviarEmail").onclick = async () => {
     boton.innerText = T("emailSending");
     boton.disabled = true;
 
+    // Arma el mismo CSV que genera el botón CSV, pero en memoria (sin descargarlo)
+    const missing = [];
+    let csvTexto = "Employee No.,Earning,Hours\n";
+    state.employees.filter(e=>e.cls==="P").forEach(e=>{
+      const p = empPeriod(e);
+      if(p.total<=0) return;
+      if(!e.empNo){ missing.push(e.name); return; }
+      if(p.total>0) csvTexto += e.empNo + ",Regular," + fh(p.total) + "\n";
+    });
+    const ds = periodDates();
+    const nombreArchivo = bizSlug() + "_horas_Q" + state.periodNum + "_" + ds[0] + ".csv";
+    const base64Content = "data:text/csv;base64," + btoa(unescape(encodeURIComponent(csvTexto)));
+
     const parametrosPlantilla = {
       business_name: state.bizName || "DEEN",
-      report_title: "Q" + state.periodNum + " · Prueba",
-      message: T("emailMsgTest")
+      report_title: "Q" + state.periodNum,
+      message: T("emailMsgTest"),
+      attachment_name: nombreArchivo,
+      attachment_data: base64Content
     };
 
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, parametrosPlantilla);
