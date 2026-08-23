@@ -233,9 +233,9 @@
   </div>
   <!-- Nueva tarjeta visual para el botón de Correo -->
   <div class="exp-card">
-    <h3>Reporte por Correo</h3>
-    <p>Envía el archivo automáticamente a tu bandeja de entrada.</p>
-    <button id="btnEnviarEmail" style="background-color: #2F4739; color: #C9A05C; padding: 14px; border: 2px solid #C9A05C; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; font-size: 14px;">
+    <h3 data-i18n="emailCardTitle">Reporte por Correo</h3>
+    <p data-i18n="emailCardDesc">.</p>
+    <button id="btnEnviarEmail" data-i18n="emailBtn" style="background-color: #2F4739; color: #C9A05C; padding: 14px; border: 2px solid #C9A05C; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; font-size: 14px;">
        📧 Enviar Reporte por Correo
     </button>
 </div>
@@ -410,7 +410,15 @@ const I18N = {
     grossShort:"Bruto",
     noteFormulas:"Fórmulas vivas: Total = Sem1+Sem2 · Pago bruto = (Total−Extra)×Tarifa + Extra×Tarifa×1.5. Cualquier corrección recalcula todo.",
     noteLunchRule:"Comida ya descontada: 0.5 h por cada 5 h de turno.",
-    sessWarn:"⚠️ AQUÍ NO SE GUARDA SOLO — antes de salir: 🔒 Privado → Enviar → Descargar respaldo"
+    sessWarn:"⚠️ AQUÍ NO SE GUARDA SOLO — antes de salir: 🔒 Privado → Enviar → Descargar respaldo",
+    emailCardTitle:"Reporte por Correo",
+    emailCardDesc:"Envía el archivo automáticamente a tu bandeja de entrada.",
+    emailBtn:"📧 Enviar Reporte por Correo",
+    emailSending:"⏳ Enviando correo...",
+    emailMsgTest:"Esta es una prueba gratuita del envío automático. El adjunto llega en una siguiente etapa.",
+    emailSuccess:"¡Correo enviado con éxito!",
+    emailError:"Hubo un error al enviar el correo: ",
+    emailErrorGeneric:"revisa las claves de EmailJS."
   },
   en: {
     capture:"Time entry", private:"Private", hide:"Hide", summary:"Summary", send:"Send",
@@ -487,7 +495,15 @@ const I18N = {
     grossShort:"Gross",
     noteFormulas:"Live formulas: Total = Wk1+Wk2 · Gross = (Total−OT)×Rate + OT×Rate×1.5. Any correction recalculates everything.",
     noteLunchRule:"Lunch already deducted: 0.5 h for every 5 h worked.",
-    sessWarn:"⚠️ NO AUTO-SAVE HERE — before leaving: 🔒 Private → Send → Download backup"
+    sessWarn:"⚠️ NO AUTO-SAVE HERE — before leaving: 🔒 Private → Send → Download backup",
+    emailCardTitle:"Email Report",
+    emailCardDesc:"Send the file automatically to your inbox.",
+    emailBtn:"📧 Send Report by Email",
+    emailSending:"⏳ Sending email...",
+    emailMsgTest:"This is a free test of the automatic send. The attachment comes in a later stage.",
+    emailSuccess:"Email sent successfully!",
+    emailError:"There was an error sending the email: ",
+    emailErrorGeneric:"check your EmailJS keys."
   },
   fr: {
     capture:"Saisie",
@@ -590,7 +606,15 @@ const I18N = {
     grossShort:"Brut",
     noteFormulas:"Formules vivantes : Total = S1+S2 · Paie brute = (Total−Suppl.)×Taux + Suppl.×Taux×1,5.",
     noteLunchRule:"Repas déjà déduit : 0,5 h par tranche de 5 h travaillées.",
-    sessWarn:"⚠️ PAS D'ENREGISTREMENT AUTOMATIQUE ICI — avant de quitter : 🔒 Privé → Envoyer → Télécharger la sauvegarde"
+    sessWarn:"⚠️ PAS D'ENREGISTREMENT AUTOMATIQUE ICI — avant de quitter : 🔒 Privé → Envoyer → Télécharger la sauvegarde",
+    emailCardTitle:"Rapport par courriel",
+    emailCardDesc:"Envoie le fichier automatiquement dans ta boîte de réception.",
+    emailBtn:"📧 Envoyer le rapport par courriel",
+    emailSending:"⏳ Envoi du courriel...",
+    emailMsgTest:"Ceci est un test gratuit de l'envoi automatique. La pièce jointe arrive à une étape ultérieure.",
+    emailSuccess:"Courriel envoyé avec succès !",
+    emailError:"Une erreur est survenue lors de l'envoi du courriel : ",
+    emailErrorGeneric:"vérifiez vos clés EmailJS."
   },
   tl: {
     capture:"Oras", private:"Pribado", hide:"Itago", summary:"Buod", send:"Ipadala",
@@ -667,7 +691,15 @@ const I18N = {
     grossShort:"Gross",
     noteFormulas:"Live formulas: Kabuuan = Lg1+Lg2 · Gross = (Kabuuan−OT)×Rate + OT×Rate×1.5.",
     noteLunchRule:"Bawas na ang tanghalian: 0.5 h bawat 5 h ng trabaho.",
-    sessWarn:"⚠️ WALANG AUTO-SAVE DITO — bago umalis: 🔒 Pribado → Ipadala → I-download ang backup"
+    sessWarn:"⚠️ WALANG AUTO-SAVE DITO — bago umalis: 🔒 Pribado → Ipadala → I-download ang backup",
+    emailCardTitle:"Ulat sa Email",
+    emailCardDesc:"Awtomatikong ipinapadala ang file sa iyong inbox.",
+    emailBtn:"📧 Ipadala ang Ulat sa Email",
+    emailSending:"⏳ Nagpapadala ng email...",
+    emailMsgTest:"Ito ay libreng pagsubok ng awtomatikong pagpapadala. Ang attachment ay darating sa susunod na yugto.",
+    emailSuccess:"Matagumpay na naipadala ang email!",
+    emailError:"May error sa pagpapadala ng email: ",
+    emailErrorGeneric:"suriin ang iyong mga EmailJS keys."
   }
 };
 const I18N_DAYS = {
@@ -1595,23 +1627,23 @@ emailjs.init(EMAILJS_PUBLIC_KEY);
 document.getElementById("btnEnviarEmail").onclick = async () => {
   const boton = document.getElementById("btnEnviarEmail");
   try {
-    boton.innerText = "⏳ Enviando correo...";
+    boton.innerText = T("emailSending");
     boton.disabled = true;
 
     const parametrosPlantilla = {
       business_name: state.bizName || "DEEN",
       report_title: "Q" + state.periodNum + " · Prueba",
-      message: "Esta es una prueba gratuita del envío automático. El adjunto llega en una siguiente etapa."
+      message: T("emailMsgTest")
     };
 
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, parametrosPlantilla);
-    alert("¡Correo enviado con éxito!");
+    alert(T("emailSuccess"));
 
   } catch (error) {
     console.error(error);
-    alert("Hubo un error al enviar el correo: " + (error && error.text ? error.text : "revisa las claves de EmailJS."));
+    alert(T("emailError") + (error && error.text ? error.text : T("emailErrorGeneric")));
   } finally {
-    boton.innerHTML = "📧 Enviar Reporte por Correo";
+    boton.innerHTML = T("emailBtn");
     boton.disabled = false;
   }
 };
