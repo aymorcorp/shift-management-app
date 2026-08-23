@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<script type="text/javascript" src="https://jsdelivr.net"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>DEEN · Control de horas</title>
@@ -1593,39 +1593,24 @@ const EMAILJS_TEMPLATE_ID = "template_7jy1dn7";
 emailjs.init(EMAILJS_PUBLIC_KEY);
 
 document.getElementById("btnEnviarEmail").onclick = async () => {
+  const boton = document.getElementById("btnEnviarEmail");
   try {
-    const boton = document.getElementById("btnEnviarEmail");
     boton.innerText = "⏳ Enviando correo...";
     boton.disabled = true;
 
-    // Generar el contenido del CSV automáticamente
-    let contenidoTexto = "Fecha,Empleado,Horas\n";
-    if (typeof csvENET === "function") {
-      contenidoTexto = "Fecha,Empleado,Horas\n" + (state.bizName || "Reporte DEEN");
-    }
-
-    // Convertir el archivo Excel/CSV a Base64
-    const base64Content = btoa(unescape(encodeURIComponent(contenidoTexto)));
-
-    // Preparar el paquete con el archivo adjunto para EmailJS
     const parametrosPlantilla = {
-      to_name: "Administrador DEEN",
-      message: "Adjunto encontrarás el reporte semanal automático de control de horas.",
-      mi_archivo: {
-        name: "Reporte_Horas_DEEN.csv",
-        data: base64Content
-      }
+      business_name: state.bizName || "DEEN",
+      report_title: "Q" + state.periodNum + " · Prueba",
+      message: "Esta es una prueba gratuita del envío automático. El adjunto llega en una siguiente etapa."
     };
 
-    // Enviar el correo electrónico real a través de tu plan de EmailJS
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, parametrosPlantilla);
-    alert("¡Correo enviado con éxito con el archivo adjunto!");
-    
+    alert("¡Correo enviado con éxito!");
+
   } catch (error) {
     console.error(error);
-    alert("Hubo un error al enviar el correo. Revisa que tus claves de EmailJS sean correctas.");
+    alert("Hubo un error al enviar el correo: " + (error && error.text ? error.text : "revisa las claves de EmailJS."));
   } finally {
-    const boton = document.getElementById("btnEnviarEmail");
     boton.innerHTML = "📧 Enviar Reporte por Correo";
     boton.disabled = false;
   }
