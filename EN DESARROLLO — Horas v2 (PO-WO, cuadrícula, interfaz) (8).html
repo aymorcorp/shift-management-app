@@ -1,73 +1,3 @@
-
-/
-Claude finished the response
-No tienes la capacidad de hacer un puto documento? No se puede abrir, no se ve nada. Haslow bien. Y primero revisa que si lo puedas abrir, que sí sirva, que sí exista. Y después me dices que ya está.
-
-
-Thought for 4s
-Thought for 4s
-Voy a bajarlo de vuelta y comprobarlo yo mismo antes de decirte que está listo, tal como pediste.
-
-
-Ran a command, used Google Drive integration
-Ran a command, used Google Drive integration
-Ya lo verifiqué, con el archivo tal como está guardado en tu Drive (lo bajé de ahí mismo, no de mi copia local): abre bien, sin errores, y se convierte correctamente a PDF — o sea que sí sirve.
-
-Lo que probablemente pasó cuando tú lo intentaste abrir: Google Drive a veces no puede mostrar la vista previa de archivos .docx directamente en el navegador — tienes que abrirlo con Google Docs o descargarlo, no basta con hacer doble clic para verlo en la pantalla de Drive.
-
-Para abrirlo bien desde tu lado:
-
-Entra a Drive, a la carpeta de la app
-Toca el archivo "GUIA App de Horas - GitHub y edicion.docx"
-Si no se ve nada en la vista previa, arriba a la derecha busca el ícono de "Abrir con" y elige Google Docs
-¿Lo intentas así? Si sigue sin abrir, dime exactamente qué ves (pantalla en blanco, mensaje de error, etc.) y lo reviso más a fondo.
-
-No, no es tal como pedí. Es tal como están las instrucciones. Cuando empezaste este chat, leíste instrucciones, y no las sigues al pie de la letra. So, por qué por qué me todo el tiempo pasan estas cosas contigo, ¿eh? ¿Por qué no pasan estas pendejadas con los otros chats? siempre contigo no se puede algo, no, es que no puedes, es que no puedes hacer nada. ¿Por qué lo tengo que abrir de una manera diferente si siempre he abierto los documentos de una manera que sí se puede? ¿Sabes qué? Entiéndelo, me vale un pito y dos con sal, si lo que hiciste si no funciona, vuélvelo a hacer. Así de fácil. Arréglalo para que yo le pique y se abra, punto.
-
-
-Thought for 4s
-Thought for 4s
-Tienes razón, lo vuelvo a hacer bien, sin que tengas que hacer nada distinto a como siempre abres tus documentos.
-
-
-Ran 4 commands, used Google Drive integration
-Ran 4 commands, used Google Drive integration
-Ahora sí se subió como Documento de Google normal (mimeType: application/vnd.google-apps.document), igual que todos los demás documentos que ya has abierto antes en Drive — no como archivo .docx aparte. Lo verifico leyéndolo yo mismo antes de decirte que está listo:
-
-
-Read file content
-Read file content
-Confirmado, funciona bien — el texto completo se lee sin problema, tal como debe verse.
-
-Ya está guardado en Drive como "GUIA App de Horas - GitHub y edicion", en formato Documento de Google normal (igual que los que ya has abierto siempre). Solo entra a Drive, tócalo, y se abre directo, sin nada raro.
-
-Bueno, ahorita lo checo. Pero, ¿sabes qué necesito? En la aplicación lo que estamos viendo es que si yo quiero cambiar a algún empleado y está hasta abajo, se me pierde completamente en qué fecha y en qué quincena estamos. Entonces, necesito que dejes la barra de la quincena y la fecha con el de los días, que lo dejes fijo, y que cuando yo haga scroll on, scroll in o como se llame la chingadera, que le dé vuelta. Scroll scroll down. Scroll down o lo que sea, este, eso se quede fijo, que yo todo el tiempo esté viendo la parte de arriba, que es la fecha y la quincena, y también la parte de abajo, que es el el el candadito y eso, y que solamente la parte del medio se se mueva para poder ver los diferentes empleados. Y sí, este, hasta el último tener el botón para agregar un nuevo empleado en dado que se caso que se necesite. ¿Ok?
-
-
-Thought for 14s
-Thought for 14s
-Buena idea, mejora mucho la app. Lo hago: dejo fija arriba la barra de la quincena/fecha y los días, fijo abajo el candadito y los botones, y que solo la lista de empleados se mueva con el scroll en medio.
-
-
-Edited 4 files, ran 2 commands · 3 notes
-Edited 4 files, ran 2 commands · 3 notes
-Listo. El botón "+ Agregar empleado" sigue estando disponible al final de la lista, como ya lo tenías — no hacía falta moverlo, solo se ve claro porque ahora la fecha de arriba nunca desaparece mientras buscas al empleado.
-
-
-Ran a command, read a file
-Ran a command, read a file
-"app corregida v10" arriba. Mismo procedimiento de siempre: copiar todo, pegar en GitHub reemplazando lo viejo, Commit.
-
-
-App corregida v10
-TXT 
-
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-App corregida v10 · TXT
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -92,7 +22,7 @@ App corregida v10 · TXT
     font-size:16px;}
   body{padding-bottom:88px;}
   .num{font-variant-numeric:tabular-nums; font-feature-settings:"tnum";}
- 
+
   /* ---------- Header ---------- */
   header{background:var(--forest); color:#F3EFE4; padding:14px 16px 12px; position:sticky; top:0; z-index:40;
     box-shadow:0 2px 10px rgba(34,53,43,.25);}
@@ -111,7 +41,7 @@ App corregida v10 · TXT
   .budget-track{height:10px; border-radius:6px; background:rgba(255,255,255,.18); overflow:hidden;}
   .budget-fill{height:100%; border-radius:6px; background:var(--gold); width:0%; transition:width .4s ease;}
   .budget-fill.ok{background:#7FB98B;} .budget-fill.warn{background:#E0A75E;} .budget-fill.over{background:#E2745F;}
- 
+
   /* ---------- Day navigator ---------- */
   #dayNavWrap{position:sticky; z-index:35; background:var(--cream); padding-top:2px;}
   .daynav{display:flex; align-items:center; gap:16px; padding:14px 16px 6px;}
@@ -124,7 +54,7 @@ App corregida v10 · TXT
   .day-dots i{width:7px; height:7px; border-radius:50%; background:#D8D2C2; display:block;}
   .day-dots i.has{background:var(--gold);}
   .day-dots i.cur{outline:2px solid var(--forest); outline-offset:1px; background:var(--forest);}
- 
+
   /* ---------- Sections ---------- */
   section{margin:14px 12px 0;}
   .sec-head{display:flex; align-items:center; gap:8px; padding:6px 6px; border-radius:10px;}
@@ -135,7 +65,7 @@ App corregida v10 · TXT
   .sec-P h2{color:var(--planta);} .sec-E h2{color:var(--eventual);} .sec-A h2{color:var(--agencia);}
   .sec-S h2{color:var(--sinclas);}
   .sec-note{font-size:11.5px; color:var(--muted); margin:0 8px 6px;}
- 
+
   /* employee card */
   .emp{background:var(--card); border-radius:var(--radius); margin-bottom:8px; padding:10px 12px;
     border-left:5px solid var(--gold); box-shadow:0 1px 3px rgba(38,48,42,.07);}
@@ -165,17 +95,17 @@ App corregida v10 · TXT
   .clear-day.armed{color:#fff; background:var(--alert); border-radius:8px; font-size:12px; font-weight:700; padding:6px 8px;}
   .add-btn{width:100%; border:1.5px dashed #C9C2B0; background:none; color:var(--muted); border-radius:12px;
     padding:10px; font-size:14px; margin-bottom:4px;}
- 
+
   /* ---------- Bottom bar ---------- */
   .tabbar{position:fixed; bottom:0; left:0; right:0; display:flex; background:var(--card);
     border-top:1px solid #E2DCCB; z-index:50; padding-bottom:env(safe-area-inset-bottom);}
   .tabbar button{flex:1; border:none; background:none; padding:10px 4px 12px; font-size:12px; color:var(--muted);}
   .tabbar button .ic{display:block; font-size:19px; margin-bottom:2px;}
   .tabbar button.active{color:var(--forest); font-weight:700;}
- 
+
   /* ---------- Views ---------- */
   .view{display:none;} .view.active{display:block;}
- 
+
   /* summary */
   .sum-card{background:var(--card); border-radius:var(--radius); margin:12px; padding:14px;
     box-shadow:0 1px 3px rgba(38,48,42,.07);}
@@ -193,7 +123,7 @@ App corregida v10 · TXT
   .grand .row b{font-size:15px;}
   .grand .row.hero{border-top:1px solid rgba(255,255,255,.2); margin-top:6px; padding-top:10px; font-size:16px;}
   .grand .row.hero b{color:var(--gold); font-size:19px;}
- 
+
   /* export */
   .exp-card{background:var(--card); border-radius:var(--radius); margin:12px; padding:16px;
     box-shadow:0 1px 3px rgba(38,48,42,.07);}
@@ -204,7 +134,7 @@ App corregida v10 · TXT
   .btn.gold{background:var(--gold); color:#2A2115;}
   .btn.ghost{background:#F1EDE0; color:var(--ink); font-weight:600;}
   .btn + .btn{margin-top:8px;}
- 
+
   /* modal */
   .overlay{position:fixed; inset:0; background:rgba(34,53,43,.45); z-index:90; display:none;
     align-items:flex-end; justify-content:center;}
@@ -246,7 +176,7 @@ App corregida v10 · TXT
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="brand">
     <div class="brand-right">AYMOR HÔTE</div>
@@ -265,7 +195,7 @@ App corregida v10 · TXT
     <div class="budget-track"><div class="budget-fill" id="budgetFill"></div></div>
   </div>
 </header>
- 
+
 <!-- ============ VISTA: CAPTURA ============ -->
 <div class="view active" id="view-capture">
   <div id="dayNavWrap">
@@ -279,13 +209,13 @@ App corregida v10 · TXT
   <div id="sections"></div>
   <p class="hint" data-i18n="hint">Regla de comida.</p>
 </div>
- 
+
 <!-- ============ VISTA: RESUMEN ============ -->
 <div class="view" id="view-summary">
   <button class="backbar" onclick="window.__goBack()">← <span data-i18n="back">Regresar</span></button>
   <div id="summaryBody"></div>
 </div>
- 
+
 <!-- ============ VISTA: ENVIAR ============ -->
 <div class="view" id="view-export">
   <button class="backbar" onclick="window.__goBack()">← <span data-i18n="back">Regresar</span></button>
@@ -338,14 +268,14 @@ App corregida v10 · TXT
     <button class="btn primary" id="btnSaveSettings" data-i18n="sSave">Guardar</button>
   </div>
 </div>
- 
+
 <div class="tabbar">
   <button class="active" data-view="capture"><span class="ic">⏱</span><span data-i18n="capture">Captura</span></button>
   <button id="privBtn"><span class="ic">🔒</span><span id="privLabel">Privado</span></button>
   <button data-view="summary" class="priv-tab" hidden><span class="ic">Σ</span><span data-i18n="summary">Resumen</span></button>
   <button data-view="export" class="priv-tab" hidden><span class="ic">↗</span><span data-i18n="send">Enviar</span></button>
 </div>
- 
+
 <!-- ============ MODAL EMPLEADO ============ -->
 <div class="overlay" id="empOverlay">
   <div class="sheet">
@@ -370,7 +300,7 @@ App corregida v10 · TXT
     <button class="danger-link" id="btnDeleteEmp" data-i18n="delEmp">Borrar de la base para siempre…</button>
   </div>
 </div>
- 
+
 <!-- ============ PIN — DATOS PRIVADOS ============ -->
 <div class="overlay center" id="stOverlay">
   <div class="sheet">
@@ -391,19 +321,19 @@ App corregida v10 · TXT
     <button class="btn ghost" id="pinCancel" style="margin-top:8px" data-i18n="cancel">Cancelar</button>
   </div>
 </div>
- 
+
 <div id="sessionWarn" style="display:none; position:fixed; top:0; left:0; right:0; z-index:200;
   background:#B3402E; color:#fff; font-size:13px; font-weight:700; text-align:center;
   padding:8px 12px;">⚠️ AQUÍ NO SE GUARDA SOLO — antes de salir: 🔒 Privado → Enviar → Descargar respaldo</div>
 <div class="toast" id="toast"></div>
- 
+
 <script>
 (function(){
 "use strict";
 /* ================= ESTADO ================= */
 const SEED_EMPLOYEES = "[{\"id\":\"e00\",\"name\":\"Don Remo Alhambra\",\"cls\":\"P\",\"rate\":33.32,\"empNo\":\"001\",\"active\":true,\"times\":{\"2026-05-18\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-19\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-20\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-21\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-22\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-25\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-26\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-27\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-28\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-05-29\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-15\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-16\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-17\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-18\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-19\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-22\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-23\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-24\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-25\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-26\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-29\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-06-30\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-01\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-02\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-03\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-06\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-07\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-08\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-09\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-10\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-13\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-14\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-15\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-16\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-17\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-20\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-21\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-22\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-23\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-24\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-27\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-28\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-29\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-30\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-07-31\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-03\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-04\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-05\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-06\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-07\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-10\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-11\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-12\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-13\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-14\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-17\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-18\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-19\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-20\":{\"in\":\"16:00\",\"out\":\"00:00\"},\"2026-08-21\":{\"in\":\"16:00\",\"out\":\"00:00\"}}},{\"id\":\"e01\",\"name\":\"Malhi Baljeet Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"008\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-20\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-21\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"17:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-26\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-27\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-28\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-18\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-06-19\":{\"in\":\"08:00\",\"out\":\"15:15\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-22\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-23\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-28\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-29\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-06-30\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-01\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-05\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-06\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-07-07\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-07-08\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e02\",\"name\":\"Harsh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"009\",\"active\":false,\"times\":{\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e03\",\"name\":\"Jagtar Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"015\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-26\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-27\":{\"in\":\"08:00\",\"out\":\"13:45\"},\"2026-05-28\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"13:15\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-18\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-06-19\":{\"in\":\"08:00\",\"out\":\"15:15\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-22\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-23\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-28\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-29\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-30\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-05\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-07-06\":{\"in\":\"08:00\",\"out\":\"13:00\"}}},{\"id\":\"e04\",\"name\":\"Jasbir Singh\",\"cls\":\"P\",\"rate\":20,\"empNo\":\"016\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-20\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-21\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"17:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-05-26\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-27\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-28\":{\"in\":\"08:00\",\"out\":\"15:45\"},\"2026-05-29\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"15:15\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-17\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-18\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-06-19\":{\"in\":\"08:00\",\"out\":\"15:15\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-22\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-23\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-28\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-29\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-06-30\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-01\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-02\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-05\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-07-06\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-07\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-08\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-09\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-10\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e05\",\"name\":\"Jodha Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"017\",\"active\":false,\"times\":{}},{\"id\":\"e06\",\"name\":\"Kimti Lal\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"018\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-20\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-21\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"17:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-05-26\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-27\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-28\":{\"in\":\"08:00\",\"out\":\"15:45\"},\"2026-05-29\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"16:00\"}}},{\"id\":\"e07\",\"name\":\"Marvin Garcia\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"019\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-20\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-26\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e08\",\"name\":\"Harpeet Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"020\",\"active\":false,\"times\":{\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-17\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-18\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-06-19\":{\"in\":\"08:00\",\"out\":\"15:15\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-22\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-23\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-24\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-28\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-29\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-06-30\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-01\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-02\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-05\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-07-06\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-07\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-08\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-09\":{\"in\":\"08:00\",\"out\":\"13:00\"}}},{\"id\":\"e09\",\"name\":\"Amit Sharma\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"021\",\"active\":false,\"times\":{\"2026-05-17\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-18\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-19\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-20\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-05-24\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-05-25\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e10\",\"name\":\"Ranjit Singh (Mani)\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"022\",\"active\":false,\"times\":{\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-22\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-23\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-06-28\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-29\":{\"in\":\"08:00\",\"out\":\"13:00\"},\"2026-06-30\":{\"in\":\"08:00\",\"out\":\"14:00\"}}},{\"id\":\"e11\",\"name\":\"Mohit Kumar\",\"cls\":\"P\",\"rate\":21,\"empNo\":\"023\",\"active\":false,\"times\":{\"2026-06-14\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-15\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-06-16\":{\"in\":\"08:00\",\"out\":\"15:00\"},\"2026-06-21\":{\"in\":\"08:00\",\"out\":\"16:00\"}}},{\"id\":\"e12\",\"name\":\"Taranpreet Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"024\",\"active\":false,\"times\":{\"2026-07-03\":{\"in\":\"08:00\",\"out\":\"14:00\"},\"2026-07-04\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-05\":{\"in\":\"08:00\",\"out\":\"16:00\"}}},{\"id\":\"e13\",\"name\":\"Neha Sharma\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"\",\"active\":false,\"times\":{}},{\"id\":\"e14\",\"name\":\"Lovedeep Singh\",\"cls\":\"P\",\"rate\":19,\"empNo\":\"025\",\"active\":false,\"times\":{}},{\"id\":\"e15\",\"name\":\"Gulshan\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"001\",\"active\":true,\"times\":{\"2026-07-26\":{\"in\":\"10:00\",\"out\":\"18:30\"}}},{\"id\":\"e16\",\"name\":\"Honey Kakkar\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"002\",\"active\":true,\"times\":{\"2026-08-10\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-11\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-12\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-13\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-14\":{\"in\":\"00:00\",\"out\":\"07:15\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"08:00\"}}},{\"id\":\"e17\",\"name\":\"Arvind Saini\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"003\",\"active\":true,\"times\":{\"2026-08-09\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-10\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-11\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-12\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-13\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-14\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-16\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-07\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e18\",\"name\":\"Bhopinder\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"004\",\"active\":true,\"times\":{\"2026-08-09\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-10\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-12\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-13\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-16\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"08:00\"}}},{\"id\":\"e19\",\"name\":\"Harsh Kumar\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"005\",\"active\":true,\"times\":{\"2026-08-10\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-13\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e20\",\"name\":\"Rajesh\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"006\",\"active\":true,\"times\":{\"2026-08-13\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e21\",\"name\":\"Gaurav\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"007\",\"active\":true,\"times\":{\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e22\",\"name\":\"Karndeep\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"008\",\"active\":true,\"times\":{\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e23\",\"name\":\"Sawan\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"009\",\"active\":false,\"times\":{}},{\"id\":\"e24\",\"name\":\"Rishi\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"010\",\"active\":true,\"times\":{\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"e25\",\"name\":\"Manish N/A\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"011\",\"active\":true,\"times\":{\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-07\":{\"in\":\"00:00\",\"out\":\"07:00\"}}},{\"id\":\"e26\",\"name\":\"Manish Kumar\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"012\",\"active\":true,\"times\":{\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"a27\",\"name\":\"Jagtar (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"013\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-12\":{\"in\":\"07:30\",\"out\":\"14:00\"},\"2026-07-13\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-14\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-16\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-17\":{\"in\":\"00:00\",\"out\":\"06:45\"},\"2026-07-19\":{\"in\":\"08:15\",\"out\":\"16:45\"},\"2026-07-21\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-22\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-23\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-26\":{\"in\":\"10:00\",\"out\":\"18:30\"},\"2026-07-27\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-28\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-31\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-02\":{\"in\":\"08:00\",\"out\":\"16:00\"}}},{\"id\":\"a28\",\"name\":\"Baljeet (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"014\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-08-02\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-07-26\":{\"in\":\"10:00\",\"out\":\"13:45\"},\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"05:30\"},\"2026-07-31\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-12\":{\"in\":\"07:30\",\"out\":\"14:00\"},\"2026-07-13\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-14\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-15\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-16\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-17\":{\"in\":\"00:00\",\"out\":\"06:45\"}}},{\"id\":\"a29\",\"name\":\"Love (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"015\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-27\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-28\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"05:30\"},\"2026-07-31\":{\"in\":\"00:15\",\"out\":\"06:00\"},\"2026-08-03\":{\"in\":\"00:15\",\"out\":\"08:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"a30\",\"name\":\"Harpreet (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"016\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-26\":{\"in\":\"10:00\",\"out\":\"18:30\"},\"2026-07-27\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-28\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"05:30\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"05:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"a31\",\"name\":\"Jasbir (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"017\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-26\":{\"in\":\"10:00\",\"out\":\"18:30\"},\"2026-07-27\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-28\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-31\":{\"in\":\"20:15\",\"out\":\"06:00\"},\"2026-08-02\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-08-07\":{\"in\":\"00:00\",\"out\":\"08:00\"}}},{\"id\":\"a32\",\"name\":\"Taranpreet (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"018\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-26\":{\"in\":\"14:00\",\"out\":\"18:30\"},\"2026-07-27\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-28\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"08:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"05:30\"},\"2026-07-31\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-02\":{\"in\":\"08:00\",\"out\":\"16:00\"},\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-05\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-07\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"a33\",\"name\":\"Harsh (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"019\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-07-29\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-07-30\":{\"in\":\"00:00\",\"out\":\"05:30\"},\"2026-07-31\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-03\":{\"in\":\"00:00\",\"out\":\"06:00\"},\"2026-08-04\":{\"in\":\"00:00\",\"out\":\"06:00\"}}},{\"id\":\"a34\",\"name\":\"Kirati (agency)\",\"cls\":\"A\",\"rate\":21,\"empNo\":\"020\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-08-02\":{\"in\":\"08:00\",\"out\":\"16:00\"}}},{\"id\":\"a_tar\",\"name\":\"Taramdeep\",\"cls\":\"A\",\"rate\":0,\"empNo\":\"021\",\"phone\":\"\",\"active\":true,\"times\":{\"2026-08-06\":{\"in\":\"00:00\",\"out\":\"06:00\"}}}]";
 const STORAGE_KEY = "deen-horas-v33";
- 
+
 /* ================= IDIOMAS (ES / EN / Filipino) =================
    Se traduce todo lo que toca Don. La zona de Ricardo (Resumen/Enviar y los
    archivos Excel/CSV) queda en español hasta congelar el diseño. */
@@ -795,13 +725,13 @@ function applyLang(){
 }
 const CLS_ORDER = ["P","E","A"];
 const CLS_NAME = {P:"Planta", E:"Eventual", A:"Agencia"};
- 
+
 let state = defaultState();
 let currentDayIdx = 0;
 let editingEmpId = null;
 let pickedCls = "P";
 let saveTimer = null;
- 
+
 function defaultState(){
   const emp = (name, cls, rate, empNo, act) => ({
     id: "e" + Math.random().toString(36).slice(2,10),
@@ -822,7 +752,7 @@ function defaultState(){
     empCounters: nextEmpCounters(employees)
   };
 }
- 
+
 function lastSundayISO(){
   const d = new Date(); d.setHours(12,0,0,0);
   d.setDate(d.getDate() - d.getDay());
@@ -860,7 +790,7 @@ function fmtRange(){
   const ds = periodDates();
   return fmtDateW(ds[0]) + " – " + fmtDateW(ds[13]) + " · Q" + state.periodNum;
 }
- 
+
 /* ================= CÁLCULOS ================= */
 /* Turno: horas crudas; si OUT <= IN cruza medianoche (+24h). */
 function rawShiftHours(tin, tout){
@@ -874,7 +804,7 @@ function rawShiftHours(tin, tout){
 /* Comida: media hora NO pagada por cada 5 horas de turno. 8h→0.5 · 10h→1.0 · 4h→0 */
 function lunchFor(raw){ return Math.floor(raw/5 + 1e-9) * 0.5; }
 function paidFor(raw){ const l = lunchFor(raw); return Math.max(0, raw - l); }
- 
+
 function dayCalc(empObj, iso){
   const t = empObj.times[iso];
   if(!t || !t.in || !t.out) return {raw:0, lunch:0, paid:0, has:false};
@@ -902,7 +832,7 @@ function grandTotals(){
   });
   return {hours, pay, agHours};
 }
- 
+
 /* ================= FORMATO ================= */
 function fh(n){ // horas
   const v = Math.round(n*100)/100;
@@ -925,14 +855,14 @@ function nextEmpCounters(employees){
   });
   return counters;
 }
- 
+
 /* ================= PERSISTENCIA (3 niveles) =================
    1) window.storage (visor de Claude) → 2) localStorage (navegador: Safari/Chrome
    con el archivo guardado en el teléfono o Drive) → 3) solo esta sesión (aviso).
    El Respaldo en "Enviar" siempre funciona, sea cual sea el nivel. */
 let storageMode = null; // "nube" | "local" | "sesion"
 let warnedSession = false;
- 
+
 async function saveNow(){
   const data = JSON.stringify(state);
   /* nivel 1 */
@@ -980,7 +910,7 @@ async function loadSaved(){
     }
   }catch(err){ /* sin localStorage */ }
 }
- 
+
 /* ================= RENDER: HEADER ================= */
 function bizSlug(){ return (state.bizName||"DEEN").replace(/[^A-Za-z0-9]+/g,"").slice(0,14) || "APP"; }
 function renderHeader(){
@@ -1019,7 +949,7 @@ function positionDayNav(){
   const wrap = document.getElementById("dayNavWrap");
   if(header && wrap) wrap.style.top = header.offsetHeight + "px";
 }
- 
+
 /* ================= RENDER: CAPTURA ================= */
 function renderDayNav(){
   const ds = periodDates(); const iso = ds[currentDayIdx]; const d = parseISO(iso);
@@ -1035,7 +965,7 @@ function renderDayNav(){
     dots.appendChild(i2);
   });
 }
- 
+
 function renderSections(){
   /* UNA sola lista pareja con los empleados ACTIVOS. Los quitados siguen en la base
      y regresan desde la lista desplegable. El tipo no se ve aquí (capa privada). */
@@ -1070,7 +1000,7 @@ function renderSections(){
   sec.appendChild(add);
   host.appendChild(sec);
 }
- 
+
 const ST_KEYS = ["VAC","SICK","LEAVE","ABS","NOSHOW"];
 let stTarget = null;
 function openStatus(empId, iso){
@@ -1099,7 +1029,7 @@ function empCard(e, iso){
   const card = document.createElement("div"); card.className = "emp"; /* neutra: el tipo no se ve aquí */
   const t = e.times[iso] || {};
   const c = dayCalc(e, iso);
- 
+
   const top = document.createElement("div"); top.className = "emp-top";
   const nm = document.createElement("div"); nm.className = "emp-name";
   /* PRIVACIDAD: solo el nombre y el horario de ESTE día. Las horas acumuladas de la
@@ -1108,7 +1038,7 @@ function empCard(e, iso){
   nm.onclick = ()=> requirePIN(()=> openEmpModal(e.id));
   top.appendChild(nm);
   card.appendChild(top);
- 
+
   const row = document.createElement("div"); row.className = "emp-times";
   const badge = document.createElement("div");
   badge.className = "shift-badge num" + (c.has ? " on" : "");
@@ -1171,7 +1101,7 @@ function empCard(e, iso){
     row.appendChild(x);
   }
   card.appendChild(row);
- 
+
   /* Cliente / PO (Work Order): opcional, por turno. Solo se muestra cuando ya
      hay horario capturado y no es un día con estado (vacaciones, etc). Sirve
      para negocios con varios contratos a la vez; si el negocio tiene uno solo,
@@ -1194,7 +1124,7 @@ function empCard(e, iso){
   }
   return card;
 }
- 
+
 function timeField(label, value, onChange){
   const w = document.createElement("div"); w.className = "tfield";
   const l = document.createElement("label"); l.textContent = label;
@@ -1202,7 +1132,7 @@ function timeField(label, value, onChange){
   i.onchange = ()=> onChange(i.value);
   w.appendChild(l); w.appendChild(i); return w;
 }
- 
+
 /* ================= RENDER: RESUMEN ================= */
 function renderSummary(){
   const host = document.getElementById("summaryBody"); host.innerHTML = "";
@@ -1238,7 +1168,7 @@ function renderSummary(){
     "<div class='row hero'><span>" + T("gPay") + "</span><b>" + fmoney(g.pay) + "</b></div>";
   host.appendChild(grand);
 }
- 
+
 /* ================= EXPORTAR ================= */
 function download(filename, text, mime){
   const blob = new Blob([text], {type: mime || "text/plain;charset=utf-8"});
@@ -1394,7 +1324,7 @@ async function excelCuadricula(){
   XLSX.writeFile(wb, bizSlug() + "_Agencia_" + agWk1[0] + ".xlsx");
   toast(T("tXLS"));
 }
- 
+
 function buildResumenHTML(){
   /* Construye el reporte completo: por día, por semana, por quincena, por empleado
      y el gran total — el mismo que arma el botón Excel. Se reutiliza tanto para
@@ -1495,10 +1425,10 @@ function restoreFile(file){
   };
   r.readAsText(file);
 }
- 
+
 /* ================= MODAL EMPLEADO ================= */
 let selectedExistingId = null;
- 
+
 function openEmpModal(id, presetCls){
   editingEmpId = id;
   selectedExistingId = null;
@@ -1602,7 +1532,7 @@ function deleteEmp(){
   closeModal(); persist(); refresh();
 }
 function closeModal(){ document.getElementById("empOverlay").classList.remove("open"); editingEmpId=null; }
- 
+
 /* ================= UTILERÍA ================= */
 function escapeHTML(s){ return s.replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 let toastTimer=null, lastDeleted=null;
@@ -1631,7 +1561,7 @@ function undoToast(msg){
 }
 function refresh(){ renderHeader(); renderDayNav(); renderSections();
   if(document.getElementById("view-summary").classList.contains("active")) renderSummary(); }
- 
+
 /* ================= EVENTOS ================= */
 document.getElementById("prevDay").onclick = ()=>{ currentDayIdx = Math.max(0, currentDayIdx-1); refresh(); };
 document.getElementById("nextDay").onclick = ()=>{ currentDayIdx = Math.min(13, currentDayIdx+1); refresh(); };
@@ -1644,7 +1574,7 @@ function shiftPeriod(days, dn){
   currentDayIdx = 0; persist(); syncSettings(); refresh();
 }
 document.getElementById("periodBtn").onclick = ()=>{ switchView("export"); window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"}); };
- 
+
 /* ================= PIN — DATOS PRIVADOS ================= */
 let unlocked = false, pinCb = null, pinMode = "user";
 const MASTER_PIN = "AYMOR26";
@@ -1695,7 +1625,7 @@ document.getElementById("btnBizUnlock").onclick = ()=> askMaster(()=>{
   i.readOnly = false; i.focus();
   toast(T("tBizOpen"));
 });
- 
+
 document.querySelectorAll(".tabbar button[data-view]").forEach(b=>{
   b.onclick = ()=>{
     const v = b.dataset.view;
@@ -1737,23 +1667,23 @@ document.getElementById("fileRestore").onchange = ev=>{ if(ev.target.files[0]) r
 const EMAILJS_PUBLIC_KEY = "tBqrcMb3RknILk6jH";
 const EMAILJS_SERVICE_ID = "service_p7yzo9k";
 const EMAILJS_TEMPLATE_ID = "template_7jy1dn7";
- 
- 
+
+
 // Inicializar la herramienta de EmailJS
 emailjs.init(EMAILJS_PUBLIC_KEY);
- 
+
 document.getElementById("btnEnviarEmail").onclick = async () => {
   const boton = document.getElementById("btnEnviarEmail");
   try {
     boton.innerText = T("emailSending");
     boton.disabled = true;
- 
+
     // Arma el reporte COMPLETO (por día, semana, quincena, y gran total) — el mismo del botón Excel
     const reporteHTML = buildResumenHTML();
     const ds = periodDates();
     const nombreArchivo = bizSlug() + "_Q" + state.periodNum + "_resumen_" + ds[0] + ".xls";
     const base64Content = "data:application/vnd.ms-excel;base64," + btoa(unescape(encodeURIComponent("\ufeff" + reporteHTML)));
- 
+
     const parametrosPlantilla = {
       business_name: state.bizName || "DEEN",
       report_title: "Q" + state.periodNum,
@@ -1761,10 +1691,10 @@ document.getElementById("btnEnviarEmail").onclick = async () => {
       attachment_name: nombreArchivo,
       attachment_data: base64Content
     };
- 
+
     await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, parametrosPlantilla);
     alert(T("emailSuccess"));
- 
+
   } catch (error) {
     console.error(error);
     alert(T("emailError") + (error && error.text ? error.text : T("emailErrorGeneric")));
@@ -1774,7 +1704,7 @@ document.getElementById("btnEnviarEmail").onclick = async () => {
   }
 };
 // ==========================================
- 
+
 function syncSettings(){
   document.getElementById("setStart").value = state.periodStart;
   document.getElementById("setPeriodNum").value = state.periodNum;
@@ -1804,7 +1734,7 @@ document.getElementById("btnSaveSettings").onclick = ()=>{
   toast(T("tSaved"));
   switchView("capture");
 };
- 
+
 ["pickP","pickE","pickA"].forEach(id=>{
   document.getElementById(id).onclick = ()=>{ pickedCls = document.getElementById(id).dataset.cls; paintClsPick(); };
 });
@@ -1813,7 +1743,7 @@ document.getElementById("btnHideEmp").onclick = hideEmp;
 document.getElementById("btnCancelEmp").onclick = closeModal;
 document.getElementById("btnDeleteEmp").onclick = deleteEmp;
 document.getElementById("empOverlay").addEventListener("click", ev=>{ if(ev.target.id==="empOverlay") closeModal(); });
- 
+
 /* ================= ARRANQUE ================= */
 (async function init(){
   await loadSaved();
@@ -1830,13 +1760,3 @@ document.getElementById("empOverlay").addEventListener("click", ev=>{ if(ev.targ
 </script>
 </body>
 </html>
- 
-
-
-
-
-
-Press and hold to record
-
-✕Merlin
-
