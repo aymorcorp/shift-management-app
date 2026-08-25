@@ -361,6 +361,7 @@ const I18N = {
     cls_E:"Empleados a prueba / temporales",
     cls_A:"Empleados de la agencia (solo control de horas)",
     thName:"Nombre",
+    thEmpNo:"No. emp.",
     thTotal:"Total",
     thExtra:"Extra",
     thPay:"Pago bruto",
@@ -446,6 +447,7 @@ const I18N = {
     cls_E:"Casual / trial employees",
     cls_A:"Agency workers (hours tracking only)",
     thName:"Name",
+    thEmpNo:"Emp. No.",
     thTotal:"Total",
     thExtra:"Overtime",
     thPay:"Gross pay",
@@ -557,6 +559,7 @@ const I18N = {
     cls_E:"Employés occasionnels / à l'essai",
     cls_A:"Travailleurs d'agence (suivi des heures seulement)",
     thName:"Nom",
+    thEmpNo:"No empl.",
     thTotal:"Total",
     thExtra:"Suppl.",
     thPay:"Paie brute",
@@ -642,6 +645,7 @@ const I18N = {
     cls_E:"Mga pansamantalang empleyado",
     cls_A:"Mga tauhan ng ahensya (oras lamang)",
     thName:"Pangalan",
+    thEmpNo:"No. emp.",
     thTotal:"Kabuuan",
     thExtra:"Overtime",
     thPay:"Gross pay",
@@ -1146,15 +1150,15 @@ function renderSummary(){
     list.forEach(e=>{
       const p = empPeriod(e);
       tW1+=p.w1; tW2+=p.w2; tT+=p.total; tL+=p.lunch; tPay+=p.pay;
-      rows += "<tr><td>" + escapeHTML(e.name) + "</td>" +
+      rows += "<tr><td>" + escapeHTML(e.name) + "</td><td class='num'>" + escapeHTML((e.cls==="P" ? (e.empNo||"—") : ((e.empNo||"")+e.cls))) + "</td>" +
         "<td class='num'>" + fh(p.w1) + "</td><td class='num'>" + fh(p.w2) + "</td>" +
         "<td class='num'>" + fh(p.total) + "</td>" +
         (showPay ? "<td class='num'>" + (p.pay?fmoney(p.pay):"—") + "</td>" : "") + "</tr>";
     });
     card.innerHTML = "<h3>" + T("cls_"+cls) + "</h3>" +
-      "<table><thead><tr><th>" + T("thName") + "</th><th>" + T("wkAbbr") + wk[0] + "</th><th>" + T("wkAbbr") + wk[1] + "</th><th>" + T("thTotal") + "</th>" +
+      "<table><thead><tr><th>" + T("thName") + "</th><th>" + T("thEmpNo") + "</th><th>" + T("wkAbbr") + wk[0] + "</th><th>" + T("wkAbbr") + wk[1] + "</th><th>" + T("thTotal") + "</th>" +
       (showPay ? "<th>" + T("thPay") + "</th>" : "") + "</tr></thead><tbody>" + rows +
-      "<tr class='tot'><td>" + T("rowTotal") + "</td><td class='num'>" + fh(tW1) + "</td><td class='num'>" + fh(tW2) + "</td>" +
+      "<tr class='tot'><td>" + T("rowTotal") + "</td><td></td><td class='num'>" + fh(tW1) + "</td><td class='num'>" + fh(tW2) + "</td>" +
       "<td class='num'>" + fh(tT) + "</td>" +
       (showPay ? "<td class='num'>" + fmoney(tPay) + "</td>" : "") + "</tr></tbody></table>" +
       "<p class='sec-note' style='margin:8px 0 0'>" + T("noteLunch") + " " + fh(tL) + " h. " + (cls==="A" ? T("noteAgency") : T("noteExtra")) + "</p>";
