@@ -415,7 +415,7 @@ const I18N = {
     emailCardDesc:"Envía el archivo automáticamente a tu bandeja de entrada.",
     emailBtn:"📧 Enviar Reporte por Correo",
     emailSending:"⏳ Enviando correo...",
-    emailMsgTest:"Esta es una prueba gratuita del envío automático. El adjunto llega en una siguiente etapa.",
+    emailMsgTest:"Adjunto va el reporte completo de horas: por día, por semana, por quincena y el total general.",
     emailSuccess:"¡Correo enviado con éxito!",
     emailError:"Hubo un error al enviar el correo: ",
     emailErrorGeneric:"revisa las claves de EmailJS."
@@ -500,7 +500,7 @@ const I18N = {
     emailCardDesc:"Send the file automatically to your inbox.",
     emailBtn:"📧 Send Report by Email",
     emailSending:"⏳ Sending email...",
-    emailMsgTest:"This is a free test of the automatic send. The attachment comes in a later stage.",
+    emailMsgTest:"Attached is the full hours report: daily, weekly, biweekly, and grand total.",
     emailSuccess:"Email sent successfully!",
     emailError:"There was an error sending the email: ",
     emailErrorGeneric:"check your EmailJS keys."
@@ -611,7 +611,7 @@ const I18N = {
     emailCardDesc:"Envoie le fichier automatiquement dans ta boîte de réception.",
     emailBtn:"📧 Envoyer le rapport par courriel",
     emailSending:"⏳ Envoi du courriel...",
-    emailMsgTest:"Ceci est un test gratuit de l'envoi automatique. La pièce jointe arrive à une étape ultérieure.",
+    emailMsgTest:"Ci-joint le rapport complet des heures : par jour, par semaine, par quinzaine et le total général.",
     emailSuccess:"Courriel envoyé avec succès !",
     emailError:"Une erreur est survenue lors de l'envoi du courriel : ",
     emailErrorGeneric:"vérifiez vos clés EmailJS."
@@ -696,7 +696,7 @@ const I18N = {
     emailCardDesc:"Awtomatikong ipinapadala ang file sa iyong inbox.",
     emailBtn:"📧 Ipadala ang Ulat sa Email",
     emailSending:"⏳ Nagpapadala ng email...",
-    emailMsgTest:"Ito ay libreng pagsubok ng awtomatikong pagpapadala. Ang attachment ay darating sa susunod na yugto.",
+    emailMsgTest:"Nakalakip ang buong ulat ng oras: araw-araw, lingguhan, kada-quincena, at kabuuang total.",
     emailSuccess:"Matagumpay na naipadala ang email!",
     emailError:"May error sa pagpapadala ng email: ",
     emailErrorGeneric:"suriin ang iyong mga EmailJS keys."
@@ -1314,8 +1314,10 @@ async function excelCuadricula(){
   toast(T("tXLS"));
 }
 
-function xlsResumen(){
-  /* Archivo .xls (tabla HTML) que Excel y Google Sheets abren como hoja de cálculo con formato. */
+function buildResumenHTML(){
+  /* Construye el reporte completo: por día, por semana, por quincena, por empleado
+     y el gran total — el mismo que arma el botón Excel. Se reutiliza tanto para
+     el botón de descarga como para el archivo que se manda por correo. */
   const ds = periodDates();
   const CLS_HEX = {P:"#3E7A4E", E:"#C77B2E", A:"#3A6EA5", S:"#8A8578"};
   const yr = parseISO(ds[13]).getFullYear();
@@ -1356,7 +1358,17 @@ function xlsResumen(){
     });
     h += "</tr>";
   });
-  h += "</table><p>Pago bruto = antes de retenciones (esas las calcula el sistema de nómina). Comida: 0.5 h por cada 5 h de turno. Generado con la app de horas · Aymor Hôte.</p></body></html>";
+  /* Gran total de todos, al final */
+  const g = grandTotals();
+  h += "</table><p style='font-weight:bold; font-size:14px;'>GRAN TOTAL — Todos los empleados: " + fh(g.hours) + " h" +
+       " · Agencia (solo control): " + fh(g.agHours) + " h · Pago bruto planta+eventuales: $" + g.pay.toFixed(2) + "</p>";
+  h += "<p>Pago bruto = antes de retenciones (esas las calcula el sistema de nómina). Comida: 0.5 h por cada 5 h de turno. Generado con la app de horas · Aymor Hôte.</p></body></html>";
+  return h;
+}
+function xlsResumen(){
+  /* Archivo .xls (tabla HTML) que Excel y Google Sheets abren como hoja de cálculo con formato. */
+  const ds = periodDates();
+  const h = buildResumenHTML();
   download(bizSlug() + "_Q" + state.periodNum + "_resumen_" + ds[0] + ".xls", "\ufeff" + h, "application/vnd.ms-excel");
   toast("Excel descargado. Mándaselo a Ricardo por WhatsApp o súbelo a Drive.");
 }
@@ -1655,17 +1667,11 @@ document.getElementById("btnEnviarEmail").onclick = async () => {
     boton.innerText = T("emailSending");
     boton.disabled = true;
 
-    // Arma el mismo CSV que genera el botón CSV, pero en memoria (sin descargarlo)
-    let csvTexto = "Employee No.,Earning,Hours\n";
-    state.employees.forEach(e=>{
-      const p = empPeriod(e);
-      if(p.total<=0) return;
-      const numero = (e.cls==="P") ? (e.empNo||"") : ((e.empNo||"") + e.cls);
-      csvTexto += numero + ",Regular," + fh(p.total) + "\n";
-    });
+    // Arma el reporte COMPLETO (por día, semana, quincena, y gran total) — el mismo del botón Excel
+    const reporteHTML = buildResumenHTML();
     const ds = periodDates();
-    const nombreArchivo = bizSlug() + "_horas_Q" + state.periodNum + "_" + ds[0] + ".csv";
-    const base64Content = "data:text/csv;base64," + btoa(unescape(encodeURIComponent(csvTexto)));
+    const nombreArchivo = bizSlug() + "_Q" + state.periodNum + "_resumen_" + ds[0] + ".xls";
+    const base64Content = "data:application/vnd.ms-excel;base64," + btoa(unescape(encodeURIComponent("\ufeff" + reporteHTML)));
 
     const parametrosPlantilla = {
       business_name: state.bizName || "DEEN",
