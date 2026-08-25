@@ -1748,9 +1748,27 @@ document.getElementById("btnCancelEmp").onclick = closeModal;
 document.getElementById("btnDeleteEmp").onclick = deleteEmp;
 document.getElementById("empOverlay").addEventListener("click", ev=>{ if(ev.target.id==="empOverlay") closeModal(); });
 
+/* ================= PARCHE: recuperar números de empleado guardados de antes =================
+   Si alguien ya tiene datos guardados en su navegador de ANTES de que se numeraran los
+   empleados, esos datos viejos (sin número) ganan sobre la base nueva. Este parche
+   revisa, uno por uno, si algún empleado activo no tiene empNo y existe alguien con el
+   mismo nombre en la base sembrada (con su número correcto) — y si es así, se lo copia,
+   SIN tocar ni borrar ninguna hora ya capturada. Se corre una sola vez al arrancar. */
+function migrateEmpNumbers(){
+  let changed = false;
+  const seed = JSON.parse(SEED_EMPLOYEES);
+  state.employees.forEach(e=>{
+    if(e.empNo) return; /* ya tiene número, no se toca */
+    const match = seed.find(s=> s.name === e.name && s.empNo);
+    if(match){ e.empNo = match.empNo; e.cls = match.cls || e.cls; changed = true; }
+  });
+  if(changed) persist();
+}
+
 /* ================= ARRANQUE ================= */
 (async function init(){
   await loadSaved();
+  migrateEmpNumbers();
   /* posicionar el día actual dentro del periodo si aplica */
   const today = toISO(new Date());
   const idx = periodDates().indexOf(today);
